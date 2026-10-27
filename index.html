@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Resume Check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Is your resume ready for tech placements?</h1>
+    <p>Paste your resume text, pick the kind of role you’re aiming for, and get a score with a checklist of what to fix. Everything runs in your browser; nothing is uploaded.</p>
+  </header>
+
+  <div class="grid">
+    <section class="panel" aria-label="Resume input">
+      <label for="role">Target role</label>
+      <select id="role">
+        <option value="sde">Software Engineer (SDE / DSA focus)</option>
+        <option value="web">Web Developer (Frontend / Full-stack)</option>
+        <option value="ml">Data Science / ML</option>
+      </select>
+      <label for="resume" style="display:block;margin-top:16px">Resume text</label>
+      <textarea id="resume" placeholder="Paste the text of your resume here…"></textarea>
+      <div class="row">
+        <button class="primary" id="go">Check my resume</button>
+        <button id="sample" type="button">Try a sample</button>
+        <button id="clear" type="button">Clear</button>
+        <button id="filebtn" type="button">Upload PDF</button>
+        <input type="file" id="file" accept=".pdf,application/pdf,.txt,text/plain" hidden>
+      </div>
+      <p class="hint" id="status">Upload a text-based PDF (not a scanned image) or paste your resume text. Files stay in your browser.</p>
+    </section>
+
+    <section class="panel" aria-live="polite" aria-label="Report" id="report">
+      <p class="empty">Your report will appear here.</p>
+    </section>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
